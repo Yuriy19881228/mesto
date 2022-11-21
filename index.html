@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="body">
+    <div class="page">
+      <header class="header">
+        <img src="./images/logo.svg" class="header__logo" alt="Логотип Место">
+      </header>
+
+      <main>
+        <section class="profile">
+          <img src="./images/image.jpg" class="profile__avatar" alt="Аватар пользователя">
+          <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button type="button" class="profile__edit-btn"></button>
+            <p class="profile__job">Исследователь океана</p>
+          </div>
+          <button type="button" class="profile__add-btn"></button>
+        </section>
+        <section class="element">
+            <ul class="element__container">
+                <li>
+                    <figure class="element__figure">
+                        <img class="element__card" src="./images/baikal.jpg" alt="Байкал">
+                        <figcaption class="element__caption">
+                            <p class="element__paragraph">Байкал</p>
+                            <button class="element__like"></button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="element__figure">
+                        <img class="element__card" src="./images/dombai.jpg" alt="Домбай">
+                        <figcaption class="element__caption">
+                            <p class="element__paragraph">Домбай</p>
+                            <button class="element__like"></button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="element__figure">
+                        <img class="element__card" src="./images/elbrus.jpg" alt="Эльбрус">
+                        <figcaption class="element__caption">
+                            <p class="element__paragraph">Эльбрус</p>
+                            <button class="element__like"></button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="element__figure">
+                        <img class="element__card" src="./images/karachaevsk.jpg" alt="Карачаевск">
+                        <figcaption class="element__caption">
+                            <p class="element__paragraph">Карачаевск</p>
+                            <button class="element__like"></button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="element__figure">
+                        <img class="element__card" src="./images/more.jpg" alt="Ледовитый океан">
+                        <figcaption class="element__caption">
+                            <p class="element__paragraph">Северный Ледовитый океан</p>
+                            <button class="element__like"></button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="element__figure">
+                        <img class="element__card" src="./images/tver.jpg" alt="Город Тверь">
+                        <figcaption class="element__caption">
+                            <p class="element__paragraph">Тверь</p>
+                            <button class="element__like"></button>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__author">&copy; 2022 Mesto Russia</p>
+    </footer>
+
+    
+    <section class="popup">
+        <div class="popup__container">
+            <button class="popup__close-btn"></button>
+            <form class="popup__content" name="popup__content">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input class="popup__name" type="text" value="Жак-Ив Кусто" required placeholder="Ваше имя" minlength="2" maxlength="30">
+                <input class="popup__job" type="text" value="Исследователь океана" required placeholder="Ваша профессия" minlength="2" maxlength="100">
+                <button class="popup__submit-btn" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </section>   
+    </div>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

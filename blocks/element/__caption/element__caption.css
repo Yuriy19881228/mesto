@@ -1,0 +1,11 @@
+.element__caption {
+    padding: 25px 15px 31px 21px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+    .element__caption {
+        max-width: 246px;
+    }
+}
