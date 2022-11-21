@@ -14,5 +14,5 @@
 * JavaScript
 ---
  
- Ссылка на проект: https://yuriy19881228.github.io/russian-travel/index.html
+ Ссылка на проект: https://yuriy19881228.github.io/mesto/index.html
 
