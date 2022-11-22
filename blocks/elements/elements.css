@@ -1,4 +1,4 @@
-.element {
+.elements {
     font-family: "Inter", Arial, sans-serif;
     font-style: normal;
     margin: 51px auto 0;
@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 340px) {
-    .element {
+    .elements {
         margin-top: 36px;
     }
 }

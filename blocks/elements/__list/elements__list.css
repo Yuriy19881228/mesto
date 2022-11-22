@@ -1,4 +1,4 @@
-.element__container {
+.elements__list {
     display: grid;
     list-style-type: none;
     grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
@@ -9,7 +9,7 @@
   }
   
   @media screen and (max-width: 767px) {
-    .element__container {
+    .elements__list {
       max-width: calc(100vw - 38px);
       margin: 16px auto 0;
     }
