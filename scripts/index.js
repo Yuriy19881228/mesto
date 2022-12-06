@@ -83,11 +83,11 @@ const closePopupAdd = function () {
 popupOpenAddButton.addEventListener("click", openPopupAdd);
 popupCloseAddButton.addEventListener("click", closePopupAdd);
 
-const popupCard = document.querySelector('#popup-card');
-const popupCardImage = popupCard.querySelector('.popup-card__image');
-const popupCardText = popupCard.querySelector('.popup-card__text');
+const popupCard = document.querySelector('#popup__card');
+const popupCardImage = popupCard.querySelector('.popup__card-image');
+const popupCardText = popupCard.querySelector('.popup__card-text');
 const cardClose = popupCard.querySelector('.popup__button-exit');
-const popupOpenCard = document.querySelector('#popup-card');
+const popupOpenCard = document.querySelector('#popup__card');
 const openPopupCards = function () {
     popupOpenCard.classList.add("popup_is-opened");
 
