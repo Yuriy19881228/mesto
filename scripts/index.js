@@ -87,7 +87,7 @@ const popupCard = document.querySelector('#popup-card');
 const popupCardImage = popupCard.querySelector('.popup-card__image');
 const popupCardText = popupCard.querySelector('.popup-card__text');
 const cardClose = popupCard.querySelector('.popup__button-exit');
-const popupOpenCard = document.querySelector('.popup-card');
+const popupOpenCard = document.querySelector('#popup-card');
 const openPopupCards = function () {
     popupOpenCard.classList.add("popup_is-opened");
 
