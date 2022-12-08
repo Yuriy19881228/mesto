@@ -11,11 +11,11 @@
 
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="./images/logo.svg" alt="логотип mesto Russia">
+        <img class="header__logo" src="./images/Vector.svg" alt="логотип">
     </header>
     <main class="content">
         <section class="profile">
-            <img class="profile__avatar-image" src="./images/profile.png" alt="Жак-Ив Кусто">
+            <img class="profile__avatar-image" src="./images/avatar.png" alt="Жак-Ив Кусто">
             <div class="profile__info">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
                 <button class="profile__edit-button" type="button"></button>
@@ -29,21 +29,19 @@
     <footer class="footer">
         <p class="footer__title">© 2020 Mesto Russia</p>
     </footer>
-    <section class="popup" id="popup__edit">
+    <section class="popup popup_form_edit">
         <div class="popup__container">
             <button class="popup__button-exit" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form" name="profile_form"  novalidate>
-                <input type="text" class="popup__input popup__input_form_name" name="name" placeholder="Ваше Имя"
-                    value="">
-                <input type="text" class="popup__input popup__input_form_job" name="job" placeholder="Место работы"
-                    value="">
+                <input type="text" class="popup__input popup__input_form_name" name="name" placeholder="Ваше Имя">
+                <input type="text" class="popup__input popup__input_form_job" name="job" placeholder="Место работы">
                 <button class="popup__button-save" type="submit">Сохранить</button>
             </form>
         </div>
     </section>
 
-    <section  class="popup" id="popup__add">
+    <section  class="popup popup_card_add">
         <div class="popup__container">
           <button class="popup__button-exit" type="button"></button>
           <h2 class="popup__title">Новое место</h2>
@@ -55,18 +53,17 @@
         </div>
       </section >
 
-     <section class="popup" id="popup__card">
-        <div class="popup__card-wrapper">
+     <section class="popup popup-card">
+        <div class="popup-card__wrapper">
           <button class="popup__button-exit" type="button"></button>
-          <img class="popup__card-image" src="#" alt="">
-          <p class="popup__card-text"></p>
+          <img class="popup-card__image" src="." alt=".">
+          <p class="popup-card__text"></p>
         </div>
       </section>
-
       <template id="card-template">
         <div class="card">
             <button type="button" class="card__delete-button"></button>
-            <img class="card__image" src="#" alt="">
+            <img class="card__image" src="." alt=".">
             <div class="card__item-description">
                 <h2 class="card__item-title"></h2>
                 <button class="card__item-like-button" type="button"></button>
