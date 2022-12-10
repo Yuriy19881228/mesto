@@ -34,16 +34,16 @@ popupOpenAddButton.addEventListener('click', function() {
 });
 
 
-const popupCloseButton = document.querySelectorAll('.popup__button-exit');
+const popupCloseButtons = document.querySelectorAll('.popup__button-exit');
 
-popupCloseButton.forEach(closeButton => {
+popupCloseButtons.forEach(closeButton => {
   const popup = closeButton.closest('.popup');
   closeButton.addEventListener('click', () => closePopup(popup));
 });
 
 
 
-function handleFormSubmit (evt) {
+function submitFormProfile (evt) {
    evt.preventDefault();
    profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
@@ -52,7 +52,7 @@ function handleFormSubmit (evt) {
 
 
 
-formElement.addEventListener('submit', handleFormSubmit);
+formElement.addEventListener('submit', submitFormProfile);
 
 const cards = document.querySelector('.cards');
 
@@ -125,8 +125,8 @@ function openImagePopupCard (image, text) {
     cards.prepend(card);
   }
 
-  initialCards.forEach(function (Add) {
-    addNewCard(Add.link, Add.name);
+  initialCards.forEach(function (add) {
+    addNewCard(add.link, add.name);
   });
 
   function saveNewCard(evt) {
