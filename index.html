@@ -6,6 +6,8 @@
     <link href="./pages/index.css" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Mesto" name="description">
+    <meta content="html, css, js" name="keywords">
+    <meta content="Репкин Максим" name="author">
     <title>Mesto</title>
 </head>
 
@@ -15,7 +17,7 @@
     </header>
     <main class="content">
         <section class="profile">
-            <img class="profile__avatar-image" src="./images/avatar.png" alt="Жак-Ив Кусто">
+            <img class="profile__avatar-image" src="./images/avatar.png" alt="фотография Жав Ив Кусто">
             <div class="profile__info">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
                 <button class="profile__edit-button" type="button"></button>
@@ -34,9 +36,14 @@
             <button class="popup__button-exit" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form" name="profile_form"  novalidate>
-                <input type="text" class="popup__input popup__input_form_name" name="name" placeholder="Ваше Имя">
-                <input type="text" class="popup__input popup__input_form_job" name="job" placeholder="Место работы">
-                <button class="popup__button-save" type="submit">Сохранить</button>
+                <input type="text" class="popup__input popup__input_form_name" name="name" placeholder="Ваше Имя"
+                    value="" required minlength="2" maxlength="40" id="profile-name">
+                    <span id="profile-name-error" class="popup__error"></span>
+                <input type="text" class="popup__input popup__input_form_job" name="job" placeholder="Место работы"
+                    value="" required minlength="2"
+                    maxlength="200" id="profile-description">
+                    <span id="profile-description-error" class="popup__error"></span>
+                <button class="popup__button-save" type="submit" disabled>Сохранить</button>
             </form>
         </div>
     </section>
@@ -46,9 +53,11 @@
           <button class="popup__button-exit" type="button"></button>
           <h2 class="popup__title">Новое место</h2>
           <form class="popup__form" name="add_form">
-              <input class="popup__input popup__input_form_title" type="text" name="title" placeholder="Название" required>
-              <input class="popup__input popup__input_form_link" type="text" name="link" placeholder="Ссылка на картинку" required>
-              <button class="popup__button-save" type="submit">Создать</button>
+              <input class="popup__input popup__input_form_title" type="text"  id="place-title" name="title" placeholder="Название" required minlength="2" maxlength="30">
+              <span id="place-title-error" class="popup__error"></span>
+              <input class="popup__input popup__input_form_link" type="url" id="place-link" name="link" placeholder="Ссылка на картинку" required>
+              <span id="place-link-error" class="popup__error"></span>
+              <button class="popup__button-save" type="submit" disabled>Создать</button>
           </form>
         </div>
       </section >
@@ -71,5 +80,6 @@
         </div>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 </html>

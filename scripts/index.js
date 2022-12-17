@@ -1,3 +1,4 @@
+const popup = document.querySelector("popup");
 const popupProfile = document.querySelector(".popup_form_edit");
 const popupOpenButtonElement = document.querySelector(".profile__edit-button");
 const popupSaveButtonElement = document.querySelector(".popup__button-save");
@@ -12,16 +13,18 @@ const popupAdd = document.querySelector('.popup_card_add');
 const formAdd = popupAdd.querySelector('.popup__form');
 const popupAddTitle = popupAdd.querySelector('.popup__input_form_title');
 const popupAddLink = popupAdd.querySelector('.popup__input_form_link');
-
-
-function openPopup(popup) {
-  popup.classList.add('popup_is-opened');
-} 
-
-
-function closePopup(popup) {
-  popup.classList.remove('popup_is-opened');
-}
+const popupButtonCreate = popupAdd.querySelector('.popup__button-save');
+const KEYESC = 'Escape';
+const closePopupEsc = (evt) => {
+  if (evt.key === KEYESC) {
+    closePopup(document.querySelector(`.popup_is-opened`));
+  }
+};
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("popup")) {
+    closePopup(e.target);
+  }
+});
 
 
 popupOpenButtonElement.addEventListener('click', function() {              
@@ -33,17 +36,34 @@ popupOpenAddButton.addEventListener('click', function() {
   openPopup(popupAdd);
 });
 
+function openPopup(popup) {
+  document.addEventListener('keydown', closePopupEsc);
+  popup.classList.add('popup_is-opened');
+} 
 
-const popupCloseButtons = document.querySelectorAll('.popup__button-exit');
 
-popupCloseButtons.forEach(closeButton => {
+function closePopup(popup) {
+  document.removeEventListener('keydown', closePopupEsc);
+  popup.classList.remove('popup_is-opened');
+}
+const handlePopupClose = (evt) => {
+    const isOverlay = evt.target.classList.contains("popup");
+    const isClose = evt.target.classList.contains("popup__button-exit");
+    if (isOverlay || isClose) {
+      closePopup();
+    }
+};
+
+const popupCloseButton = document.querySelectorAll('.popup__button-exit');
+
+popupCloseButton.forEach(closeButton => {
   const popup = closeButton.closest('.popup');
   closeButton.addEventListener('click', () => closePopup(popup));
 });
 
 
 
-function submitFormProfile (evt) {
+function handleFormSubmit (evt) {
    evt.preventDefault();
    profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
@@ -52,7 +72,7 @@ function submitFormProfile (evt) {
 
 
 
-formElement.addEventListener('submit', submitFormProfile);
+formElement.addEventListener('submit', handleFormSubmit);
 
 const cards = document.querySelector('.cards');
 
@@ -90,11 +110,10 @@ const popupCardText = popupCard.querySelector('.popup-card__text');
 const popupOpenCard = document.querySelector('.popup-card');
 
 function openImagePopupCard (image, text) {
-  openPopup(popupCard);
     popupCardImage.setAttribute('src', image);
     popupCardText.textContent = text;
     popupCardImage.setAttribute('alt', text);
-    
+    openPopup(popupCard);
 
   }
   
@@ -110,13 +129,15 @@ function openImagePopupCard (image, text) {
     
     cardElement.querySelector('.card__item-like-button').addEventListener('click', function (like) {
       like.target.classList.toggle('card__item-like-button_active');  
+      console.log(like);
     });
+    
     cardElement.querySelector('.card__delete-button').addEventListener('click', function (del) {
       del.target.closest('.card').remove();
     });
     cardImage.addEventListener('click', function (event) {
       openImagePopupCard(src, alt);
-    });
+  });
     
     return cardElement;
   }
@@ -125,8 +146,8 @@ function openImagePopupCard (image, text) {
     cards.prepend(card);
   }
 
-  initialCards.forEach(function (add) {
-    addNewCard(add.link, add.name);
+  initialCards.forEach(function (card) {
+    addNewCard(card.link, card.name);
   });
 
   function saveNewCard(evt) {
@@ -134,9 +155,11 @@ function openImagePopupCard (image, text) {
     const name = popupAddTitle.value;
     const linkImage = popupAddLink.value;
     addNewCard(linkImage, name);
-    evt.target.reset();
     closePopup(popupAdd);
+    evt.target.reset();
   }
   
   formAdd.addEventListener('submit', saveNewCard);
+
   
+ 
