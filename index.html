@@ -11,7 +11,7 @@
 
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="./images/Vector.svg" alt="лого место">
+        <img class="header__logo" src="./images/Vector.svg" alt="логотип">
     </header>
     <main class="content">
         <section class="profile">
@@ -60,24 +60,23 @@
         </div>
       </section >
 
-     <section class="popup popup-card">
+     <section class="popup popup-card" id="popup-image">
         <div class="popup-card__wrapper">
           <button class="popup__button-exit" type="button"></button>
-          <img class="popup-card__image" src="." alt=".">
+          <img class="popup-card__image" src="#" alt="#">
           <p class="popup-card__text"></p>
         </div>
       </section>
       <template id="card-template">
         <div class="card">
             <button type="button" class="card__delete-button"></button>
-            <img class="card__image" src="." alt=".">
+            <img class="card__image" src="#" alt="#">
             <div class="card__item-description">
                 <h2 class="card__item-title"></h2>
                 <button class="card__item-like-button" type="button"></button>
             </div>
         </div>
     </template>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validate.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>
