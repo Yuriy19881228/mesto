@@ -9,11 +9,18 @@ export class Card {
         this._handleOpenImage = handleOpenImage;
     }
    
+    _getTemplate() {
+        const createCard =
+        document.querySelector(itemTemplateSelector).content.querySelector('.card');
+
+        return createCard;
+    }
+
     _handleLikeButtonClick = () => {
         this._itemLikeButton.classList.toggle('card__item-like-button_active');
     }
     _handleDeleteButtonClick = () => {
-        this._itemElement.remove();
+        this._itemElement = null;
     }
     _setEventListeners() {
         this._itemLikeButton.addEventListener('click', this._handleLikeButtonClick);
@@ -22,7 +29,7 @@ export class Card {
     }
 
     createElement() {
-        const itemImage = this._itemElement.querySelector('.card__image');
+       const itemImage = this._cardImage;
        const itemTitle = this._itemElement.querySelector('.card__item-title');
        itemTitle.textContent = this._data.name;
        itemImage.src = this._data.link;

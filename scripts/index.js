@@ -1,6 +1,7 @@
 import { Card } from "./card.js";
+import { initialCards } from "./data.js";
 import { FormValidator } from "./FormValidator.js";
-const popupProfile = document.querySelector(".popup_form_edit");
+const popupProfile = document.querySelector(".popup_type_edit");
 const popupOpenProfileButton = document.querySelector(".profile__edit-button");
 const popupSaveButtonElement = document.querySelector(".popup__button-save");
 const formElement = document.querySelector(".popup__form");
@@ -32,32 +33,6 @@ const config = {
   errorClass: "popup__error_visibility",
 };
 
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-];
 
 const validationPopupProfile = new FormValidator(config, popupProfile);
 validationPopupProfile.enableValidation();
@@ -91,9 +66,9 @@ popupCloseButtons.forEach((closeButton) => {
 initialCards.forEach(render);
 
 popupOpenProfileButton.addEventListener("click", function () {
-  openPopup(popupProfile);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
+  openPopup(popupProfile);
 });
 
 function handleImageClick(data) {
@@ -108,6 +83,7 @@ function render(data) {
   const newItem = item.createElement();
   cards.prepend(newItem);
 }
+
 
 popupOpenAddButton.addEventListener("click", () => {
   validationPopupAdd.resetFormErrors();
