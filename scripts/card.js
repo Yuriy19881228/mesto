@@ -14,6 +14,7 @@ export class Card {
 
         return createCard;
     }
+    
     _handleLikeButtonClick = () => {
         this._itemLikeButton.classList.toggle('card__item-like-button_active');
     }
@@ -38,3 +39,4 @@ export class Card {
         return this._itemElement;
    }
 };
+this._itemElement = null;
