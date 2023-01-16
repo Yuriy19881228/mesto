@@ -39,4 +39,3 @@ export class Card {
         return this._itemElement;
    }
 };
-this._itemElement = null;
