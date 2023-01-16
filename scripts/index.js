@@ -1,4 +1,4 @@
-import { Card } from "./card.js";
+import { Card } from "./Card.js";
 import { initialCards } from "./data.js";
 import { FormValidator } from "./FormValidator.js";
 const popupProfile = document.querySelector(".popup_type_edit");
@@ -11,7 +11,7 @@ const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__subtitle");
 
 const popupOpenAddButton = document.querySelector(".profile__add-button");
-const popupAdd = document.querySelector(".popup_card_add");
+const popupAdd = document.querySelector(".popup_type_add-card");
 const formAdd = document.querySelector('[name="add_form"]');
 const popupAddTitle = popupAdd.querySelector(".popup__input_form_title");
 const popupAddLink = popupAdd.querySelector(".popup__input_form_link");
@@ -20,7 +20,7 @@ const cards = document.querySelector(".cards");
 const popupCloseButtons = document.querySelectorAll(".popup__button-exit");
 const formElementAdd = document.querySelector('[name="add_form"]');
 
-const popupCard = document.querySelector(".popup-card");
+const popupCard = document.querySelector(".popup_type_image-preview");
 const popupCardImage = popupCard.querySelector(".popup-card__image");
 const popupCardText = popupCard.querySelector(".popup-card__text");
 
@@ -78,11 +78,15 @@ function handleImageClick(data) {
   openPopup(popupCard);
 }
 
-function render(data) {
+
+function createCard(data) {
   const item = new Card(data, "#card-template", handleImageClick);
-  const newItem = item.createElement();
-  cards.prepend(newItem);
+  return item.createElement();
 }
+
+function render(data) {
+  cards.prepend(createCard(data));
+} 
 
 
 popupOpenAddButton.addEventListener("click", () => {
