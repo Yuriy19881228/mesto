@@ -21,8 +21,8 @@ const popupCloseButtons = document.querySelectorAll(".popup__button-exit");
 const formElementAdd = document.querySelector('[name="add_form"]');
 
 const popupCard = document.querySelector(".popup_type_image-preview");
-const popupCardImage = popupCard.querySelector(".popup-card__image");
-const popupCardText = popupCard.querySelector(".popup-card__text");
+const popupCardImage = popupCard.querySelector(".popup__card-image");
+const popupCardText = popupCard.querySelector(".popup__card-text");
 
 const config = {
   formSelector: ".popup__form",
