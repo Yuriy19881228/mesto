@@ -15,7 +15,7 @@
     </header>
     <main class="content">
         <section class="profile">
-            <img class="profile__avatar-image" src="./images/avatar.png" alt="Жав-Ив Кусто">
+            <img class="profile__avatar-image" src="./images/avatar.png" alt="фотография Жав Ив Кусто">
             <div class="profile__info">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
                 <button class="profile__edit-button" type="button"></button>
@@ -29,7 +29,7 @@
     <footer class="footer">
         <p class="footer__title">© 2022 Mesto Russia</p>
     </footer>
-    <section class="popup popup_type_edit">
+    <section class="popup popup_form_edit">
         <div class="popup__container">
             <button class="popup__button-exit" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
@@ -37,7 +37,7 @@
                 <input type="text" class="popup__input popup__input_form_name" name="name" placeholder="Ваше Имя"
                     value="" required minlength="2" maxlength="40" id="profile-name">
                     <span id="profile-name-error" class="popup__error"></span>
-                <input type="text" class="popup__input popup__input_form_job" name="job" placeholder="Место работы"
+                <input type="text" class="popup__input popup__input_form_job" name="prof" placeholder="Место работы"
                     value="" required minlength="2"
                     maxlength="200" id="profile-description">
                     <span id="profile-description-error" class="popup__error"></span>
@@ -46,7 +46,7 @@
         </div>
     </section>
 
-    <section  class="popup popup_type_add-card">
+    <section  class="popup popup_card_add">
         <div class="popup__container">
           <button class="popup__button-exit" type="button"></button>
           <h2 class="popup__title">Новое место</h2>
@@ -60,11 +60,11 @@
         </div>
       </section >
 
-     <section class="popup popup_type_image-preview" id="popup-image">
-        <div class="popup__card-wrapper">
+     <section class="popup popup-card" id="popup-image">
+        <div class="popup-card__wrapper">
           <button class="popup__button-exit" type="button"></button>
-          <img class="popup__card-image" src="#" alt="#">
-          <p class="popup__card-text"></p>
+          <img class="popup-card__image" src="#" alt="#">
+          <p class="popup-card__text"></p>
         </div>
       </section>
       <template id="card-template">
@@ -77,6 +77,6 @@
             </div>
         </div>
     </template>
-    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/pages/index.js"></script>
 </body>
 </html>

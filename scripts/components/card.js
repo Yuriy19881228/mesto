@@ -14,13 +14,11 @@ export class Card {
 
         return createCard;
     }
-    
     _handleLikeButtonClick = () => {
         this._itemLikeButton.classList.toggle('card__item-like-button_active');
     }
     _handleDeleteButtonClick = () => {
-        this._itemElement.remove(); 
-        this._itemElement = null;
+        this._itemElement.remove();
     }
     _setEventListeners() {
         this._itemLikeButton.addEventListener('click', this._handleLikeButtonClick);
@@ -29,11 +27,11 @@ export class Card {
     }
 
     createElement() {
-        this._itemImage = this._cardImage;
-        this._itemTitle = this._itemElement.querySelector('.card__item-title');
-        this._itemTitle.textContent = this._data.name;
-        this._itemImage.src = this._data.link;
-        this._itemImage.alt = this._data.name;
+        const itemImage = this._itemElement.querySelector('.card__image');
+       const itemTitle = this._itemElement.querySelector('.card__item-title');
+       itemTitle.textContent = this._data.name;
+       itemImage.src = this._data.link;
+       itemImage.alt = this._data.name;
 
         this._setEventListeners();
         return this._itemElement;

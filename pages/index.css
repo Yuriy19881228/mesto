@@ -41,6 +41,6 @@
 @import url(../blocks/popup/__error/popup__error.css);
 /*--POPUP-CARD--*/
 @import url(../blocks/popup-card/popup-card.css);
-@import url(../blocks/popup-card/__image/popup__card-image.css);
-@import url(../blocks/popup-card/__text/popup__card-text.css);
-@import url(../blocks/popup-card/__wrapper/popup__card-wrapper.css);
+@import url(../blocks/popup-card/__image/popup-card__image.css);
+@import url(../blocks/popup-card/__text/popup-card__text.css);
+@import url(../blocks/popup-card/__wrapper/popup-card__wrapper.css);
