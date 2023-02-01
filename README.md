@@ -12,6 +12,8 @@
 * CSS Flexbox
 * CSS Grid Layout
 * JavaScript
+* Произведен рефакторинг кода с учетом ООП
+* Сборка проекта с помощью WebPack
 ---
  
  Ссылка на проект: https://yuriy19881228.github.io/mesto/index.html

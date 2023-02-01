@@ -1,14 +1,5 @@
 .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 361px;
-    width: 282px;
-}
-
-@media screen and (max-width: 568px) {
-    .card {
-        max-width: 282px;
-
-    }
+  border-radius: 10px;
+  background-color: #fff;
+  width: 282px;
 }
